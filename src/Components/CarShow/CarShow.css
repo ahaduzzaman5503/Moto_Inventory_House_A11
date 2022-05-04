@@ -1,0 +1,17 @@
+.carshow{
+    padding: 35px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    position: relative;
+}
+
+.stock-btn{
+    width: 60%;
+    font-size: 22px;
+    background-color: rgb(224, 235, 228);
+    color: black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+}

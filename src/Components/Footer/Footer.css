@@ -1,0 +1,19 @@
+.footer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgba(26, 26, 26, 0.95);
+    color: white;
+    padding: 50px 20px;
+}
+.footer ul li{
+    list-style-type: none;
+    text-align: start;
+}
+
+.logo-address{
+    text-align: start;
+}
+
+ul li{
+    padding: 5px 2px;
+}
