@@ -1,7 +1,7 @@
 import React from 'react';
 import "./CarShow.css"
 
-const CarShow = ({car, singleCarDetailsHandle}) => {
+const CarShow = ({car, singleInventoryHandle}) => {
     const {carImage, name, price, description, supplierName, quantity} = car;
 
     return (
@@ -12,7 +12,7 @@ const CarShow = ({car, singleCarDetailsHandle}) => {
             <p>{description}</p>
             <h3>Suppliers:  {supplierName}</h3>
             <h3>Quantity:   {quantity}</h3>
-            <button className='stock-btn' onClick={ ()=> singleCarDetailsHandle(car)} >Stock Update </button>
+            <button className='stock-btn' onClick={ ()=> singleInventoryHandle(car)} >Stock Update </button>
         </div>
     );
 };

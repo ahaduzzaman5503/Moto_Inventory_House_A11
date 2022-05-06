@@ -5,30 +5,43 @@ import slider2 from "../../Images/budget-slider-2.jpg";
 import slider3 from "../../Images/budget-slider-3.jpg";
 import car1 from "../../Images/car-1.png";
 import CarShow from '../CarShow/CarShow';
-import StockPD from '../StockPD/StockPD';
+import Inventory from '../Inventory/Inventory';
 import "./Home.css"
-
 
 const Home = (props) => {
 
   const [cars, setCars] = useState([]);
-  const [carDetails, setcarDetails] = useState([])
+  const [inventory, setInventory] = useState([]);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
+  useEffect( () => {
+    fetch('http://localhost:5000/cars')
+    .then (res => res.json())
+    .then(data => setCars(data));
+  }, [])
+
+  fetch('http://localhost:5000/cars', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(cars)
+})
+.then(res=> res.json())
+.then(data => {
+  const newCars = [...cars, data];
+  setCars(newCars);
+  console.log(data);
+})
 
 
-  useEffect(() => {
-    fetch('cars.json')
-    .then(res => res.json())
-    .then(data => setCars(data))
-  },[])
+    const singleInventoryHandle = (car) => {
+     const singleCar = [...inventory, car]
+      // navigate(`/inventory/${car.id}`);
+     console.log(car.id);
 
-  const singleCarDetailsHandle = (car) => {
-    const singleCar = [...carDetails, car]
-    navigate(`/cardetails/:${car.id}`);
-    console.log(car);
-
-    setcarDetails(singleCar)
+    setInventory(singleCar)
   }
 
     return (
@@ -136,24 +149,24 @@ const Home = (props) => {
 
                 <div className='carShow container'>
                   {
-                    cars.map( car=> <CarShow
+                    cars.map( car => <CarShow
                     key={car.id}
                     car={car}
-                    singleCarDetailsHandle={singleCarDetailsHandle}
+                    singleInventoryHandle={singleInventoryHandle}
                     ></CarShow>)
                   }
                 </div>
         </div>
 
-        <div className='stockpd container'>
-                  {
-                    carDetails.map( car=><StockPD
-                      key={car.id}
-                      carDetails={car}
-                      singleCarDetailsHandle={singleCarDetailsHandle}
-                    ></StockPD>)
-                    
-                  }
+        <div className='inventory container'>
+
+                    {
+                      inventory.map(car=> <Inventory
+                        key={car.id}
+                        inventory={car}
+                        singleInventoryHandle={singleInventoryHandle}
+                      ></Inventory>)
+                    }
         </div>
 
   </div>
