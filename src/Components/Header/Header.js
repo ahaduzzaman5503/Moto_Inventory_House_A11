@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css"
 import pic from "../../Images/logo-budget.png";
 
 const Header = () => {
+    useEffect(() => {
+        window.addEventListener('scroll', isSticky);
+        return () => {
+            window.removeEventListener('scroll', isSticky);
+        };
+    });
+
+    const isSticky = (e) => {
+        const header = document.querySelector('.header-section');
+        const scrollTop = window.scrollY;
+        scrollTop >= 250 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');
+    };
     return (
-        <div className='main'>
+        <div className='main header-section d-none d-xl-block'>
             <nav className='nav-ber navbar navbar_top '>
 
             <div className="container">

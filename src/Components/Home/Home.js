@@ -13,7 +13,7 @@ const Home = (props) => {
   const [cars, setCars] = useState([]);
   const [inventory, setInventory] = useState([]);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect( () => {
     fetch('http://localhost:5000/cars')
@@ -22,26 +22,20 @@ const Home = (props) => {
   }, [])
 
   fetch('http://localhost:5000/cars', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(cars)
-})
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
+  })
 .then(res=> res.json())
 .then(data => {
-  const newCars = [...cars, data];
-  setCars(newCars);
-  console.log(data);
 })
 
 
     const singleInventoryHandle = (car) => {
      const singleCar = [...inventory, car]
-      // navigate(`/inventory/${car.id}`);
-     console.log(car.id);
-
-    setInventory(singleCar)
+      navigate(`/inventory/${car.id}`);
+      setInventory(singleCar)
   }
 
     return (
@@ -157,18 +151,6 @@ const Home = (props) => {
                   }
                 </div>
         </div>
-
-        <div className='inventory container'>
-
-                    {
-                      inventory.map(car=> <Inventory
-                        key={car.id}
-                        inventory={car}
-                        singleInventoryHandle={singleInventoryHandle}
-                      ></Inventory>)
-                    }
-        </div>
-
   </div>
     );
 };

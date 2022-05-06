@@ -11,8 +11,8 @@ const CarShow = ({car, singleInventoryHandle}) => {
             <h3>${price}</h3>
             <p>{description}</p>
             <h3>Suppliers:  {supplierName}</h3>
-            <h3>Quantity:   {quantity}</h3>
-            <button className='stock-btn' onClick={ ()=> singleInventoryHandle(car)} >Stock Update </button>
+            <h3>Quantity In Stock:   {quantity}</h3>
+            <button className='stock-btn' onClick={ ()=> singleInventoryHandle(car)} ><h4>Stock Update</h4> </button>
         </div>
     );
 };

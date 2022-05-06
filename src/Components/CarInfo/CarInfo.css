@@ -1,0 +1,65 @@
+.carInfoMain{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 20px auto;
+    
+}
+
+.carInfoShow{
+    background-color: rgba(241, 232, 232, 0.555);
+    border: 1px solid gray;
+    border-radius: 15px;
+    text-align: start;
+    padding: 20px 50px 40px 50px;
+    margin: 50px auto;
+    position: relative;
+}
+.carInfoShow img{
+    width: 300px;
+    height: auto;
+    border: 3px solid aqua;
+    border-radius: 10px;
+}
+
+.carinfo{
+    background-color: rgba(240, 231, 231, 0.671);
+    border: 1px solid gray;
+    border-radius: 20px;
+    text-align: start;
+    margin: 50px auto;
+}
+
+.stock-btn{
+    width: 60%;
+    font-size: 22px;
+    background-color: rgb(224, 235, 228);
+    color: black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 45px;
+}
+
+.carItem{
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    align-items: center;
+    border: 3px solid rgba(141, 161, 161, 0.514);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.carItem img{
+    width: 90%;
+}
+
+.btn-danger{
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.addNewBtn{
+    padding: 5px 15px 10px;
+}
