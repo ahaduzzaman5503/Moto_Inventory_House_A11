@@ -16,12 +16,12 @@ const Home = (props) => {
   const navigate = useNavigate();
 
   useEffect( () => {
-    fetch('https://blooming-beyond-07749.herokuapp.com/cars')
+    fetch('https://blooming-beyond-07749.herokuapp.com/inventory')
     .then (res => res.json())
     .then(data => setCars(data));
   }, [])
 
-  fetch('https://blooming-beyond-07749.herokuapp.com/cars', {
+  fetch('https://blooming-beyond-07749.herokuapp.com/inventory', {
     headers : { 
       'Content-Type': 'application/json',
       'Accept': 'application/json'

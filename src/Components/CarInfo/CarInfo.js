@@ -9,7 +9,7 @@ const CarInfo = (singleInventoryHandle) => {
 
 
     useEffect(() => {
-        const url = `https://blooming-beyond-07749.herokuapp.com/car/${carId}`;
+        const url = `https://blooming-beyond-07749.herokuapp.com/inventorys/${carId}`;
         fetch(url) 
         .then(res => res.json())
         .then(data => setCar(data))
