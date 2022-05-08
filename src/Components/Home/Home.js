@@ -105,41 +105,8 @@ const Home = (props) => {
         </div>
         </div>
 
-          <div className='automotive-marketplace container'>
-
-            <div className='left-image'>
-              <img src={car1} className="li" alt=""/>
-            </div>
-            <div className='right-text'>
-              <h1>World largest automotive marketplace.</h1>
-                <div className='four-section'> 
-                <div className='mb-3' >
-                   <i className="fas fa-car fa-2x  "></i> <h2 className='d-inline'>Best Collection</h2>
-                <p>Best car Collection for you. You can chooce your best car. Here has diffirent type of car brand. </p>
-                </div>
-
-                <div className='mb-3' >
-                <i className="fa-solid fa-car-on fa-2x"></i> <h2 className='d-inline'>Best Pricing</h2>
-                <p>You can chooce any best rating car as your like. Here have beautifull car for you</p>
-                </div>
-
-                <div className='mb-3'>
-                <i className="fa-solid fa-car-on fa-2x"></i> <h2 className='d-inline'>Famous Brands</h2>
-                  <p>Famous Brands car also have here. You can chooce any Famous car. Whice you like.</p>
-                </div>
-
-                <div className='mb-3'>
-                <i className="fas fa-car fa-2x"></i> <h2 className='d-inline'>Best Ratings</h2>
-                <p>All car has best rating. Those ratting given our clent. All are satisfied on our car.</p>
-                </div>
-
-                </div>
-            </div>
-
-          </div>
-
         <div className='car-item-section'>
-                <h1>Latest Collection</h1>
+                <h1>Moto Inventory House</h1>
 
                 <div className='carShow container'>
                   {
@@ -151,6 +118,39 @@ const Home = (props) => {
                   }
                 </div>
         </div>
+
+        <div className='automotive-marketplace container'>
+
+<div className='left-image'>
+  <img src={car1} className="li" alt=""/>
+</div>
+<div className='right-text'>
+  <h1>World largest automotive marketplace.</h1>
+    <div className='four-section'> 
+    <div className='mb-3' >
+       <i className="fas fa-car fa-2x  "></i> <h2 className='d-inline'>Best Collection</h2>
+    <p>Best car Collection for you. You can chooce your best car. Here has diffirent type of car brand. </p>
+    </div>
+
+    <div className='mb-3' >
+    <i className="fa-solid fa-car-on fa-2x"></i> <h2 className='d-inline'>Best Pricing</h2>
+    <p>You can chooce any best rating car as your like. Here have beautifull car for you</p>
+    </div>
+
+    <div className='mb-3'>
+    <i className="fa-solid fa-car-on fa-2x"></i> <h2 className='d-inline'>Famous Brands</h2>
+      <p>Famous Brands car also have here. You can chooce any Famous car. Whice you like.</p>
+    </div>
+
+    <div className='mb-3'>
+    <i className="fas fa-car fa-2x"></i> <h2 className='d-inline'>Best Ratings</h2>
+    <p>All car has best rating. Those ratting given our clent. All are satisfied on our car.</p>
+    </div>
+
+    </div>
+</div>
+
+</div>
   </div>
     );
 };

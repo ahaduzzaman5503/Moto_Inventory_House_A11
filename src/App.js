@@ -6,16 +6,21 @@ import Home from './Components/Home/Home';
 import NotFound from './Components/NotFound/NotFound';
 import Inventory from "./Components/Inventory/Inventory";
 import CarInfo from './Components/CarInfo/CarInfo';
+import LogIn from "./Components/LogIn/LogIn";
+import Register from "./Components/Register/Register";
+
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/inventory/:carId' element={<CarInfo></CarInfo>}></Route>
+        <Route path='/login' element={<LogIn></LogIn>}></Route>
+        <Route path='/regester' element={<Register></Register>} ></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
