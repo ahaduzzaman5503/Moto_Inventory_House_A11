@@ -31,7 +31,6 @@ const Home = (props) => {
 .then(data => {
 })
 
-
     const singleInventoryHandle = (car) => {
      const singleCar = [...inventory, car]
       navigate(`/inventory/${car.id}`);
@@ -105,8 +104,8 @@ const Home = (props) => {
         </div>
         </div>
 
-        <div className='car-item-section'>
-                <h1>Moto Inventory House</h1>
+        <div className='car-item-section container'>
+                <h1 className='container' >Moto Inventory House</h1>
 
                 <div className='carShow container'>
                   {

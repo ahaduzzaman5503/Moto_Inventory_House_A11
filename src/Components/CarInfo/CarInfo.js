@@ -5,6 +5,8 @@ import "./CarInfo.css";
 const CarInfo = (singleInventoryHandle) => {
     const {carId} = useParams();
     const [car, setCar] = useState({});
+    const [carInfoshow, setCarInfoshow] = useState({});
+
 
     useEffect(() => {
         const url = `http://localhost:5000/car/${carId}`;
@@ -13,7 +15,9 @@ const CarInfo = (singleInventoryHandle) => {
         .then(data => setCar(data))
     }, [carId])
 
-    const deliverHandle = () => {
+    const deliverHandle = (car) => {
+        const singleDeliver = [ ...carInfoshow, car]
+        setCarInfoshow(singleDeliver)
         console.log("Deliver Success!")
     }
 

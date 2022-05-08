@@ -1,11 +1,11 @@
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-  apiKey: "AIzaSyCxu7Xash99_MJx4YmuIqGm-g14BFTVZY4",
-  authDomain: "moto-inventory-auth-db574.firebaseapp.com",
-  projectId: "moto-inventory-auth-db574",
-  storageBucket: "moto-inventory-auth-db574.appspot.com",
-  messagingSenderId: "61312911978",
-  appId: "1:61312911978:web:83327c2fa78f25e1b3d813"
+  apiKey: "AIzaSyDbNRDeVTTIDUecC6svvi9HXTUeIu2SQ8g",
+  authDomain: "inventory-email-pass-auth.firebaseapp.com",
+  projectId: "inventory-email-pass-auth",
+  storageBucket: "inventory-email-pass-auth.appspot.com",
+  messagingSenderId: "55948039861",
+  appId: "1:55948039861:web:ba7248ad024703035990fc"
 };
 
 const app = initializeApp(firebaseConfig);
