@@ -16,12 +16,12 @@ const Home = (props) => {
   const navigate = useNavigate();
 
   useEffect( () => {
-    fetch('http://localhost:5000/cars')
+    fetch('https://blooming-beyond-07749.herokuapp.com/cars')
     .then (res => res.json())
     .then(data => setCars(data));
   }, [])
 
-  fetch('http://localhost:5000/cars', {
+  fetch('https://blooming-beyond-07749.herokuapp.com/cars', {
     headers : { 
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -105,7 +105,7 @@ const Home = (props) => {
         </div>
 
         <div className='car-item-section container'>
-                <h1 className='container' >Moto Inventory House</h1>
+                <h1 className='container w-50 mx-auto' >Moto Inventory House</h1>
 
                 <div className='carShow container'>
                   {

@@ -5,7 +5,7 @@
     width: 100%; */
 }
 
-.is-sticky {
+.header-sticky {
     position: fixed;
     top: 0;
     left: 0;
