@@ -47,7 +47,7 @@ const CarInfo = (singleInventoryHandle) => {
                     <h3> Quantity:   {car.quantity}</h3>
                 </div>
                 <div>
-                    <button type="button" className="btn btn-danger"><i className="fa-solid fa-trash-can fa-2xl"></i></button>
+                   <button type="button" className="btn btn-danger"><i className="fa-solid fa-trash-can fa-2xl"></i></button>
                 </div>
             </div> 
 
