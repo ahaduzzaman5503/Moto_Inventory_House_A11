@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import InventoryShow from '../InventoryShow/InventoryShow';
+import "./Inventory.css";
 
-const Inventory = () => {
+const Inventory = (props) => {
+    const [carInventory, setcarInventory] = useState([]);
+
+    useEffect( () => {
+        fetch('https://glacial-beach-89236.herokuapp.com/inventory')
+        .then (res => res.json())
+        .then(data => setcarInventory(data));
+      }, [])
+
 
     return (
-        <div>
-            <h1>I am Inventory</h1>
-            <h3> Here will be show  inventory data</h3>
-           
+        <div className='inventory container w-75 mx-auto'>
+            {
+               carInventory.map (singleINventory => <InventoryShow
+                key={singleINventory._id}
+                singleINventory={singleINventory}
+               ></InventoryShow>)
+            }
+
         </div>
     );
 };
