@@ -3,17 +3,16 @@ import { useParams } from 'react-router-dom';
 import "./CarInfo.css";
 
 const CarInfo = (singleInventoryHandle) => {
-    const {carId} = useParams();
+    const {_id} = useParams();
     const [car, setCar] = useState({});
     const [carInfoshow, setCarInfoshow] = useState({});
 
 
     useEffect(() => {
-        const url = `https://blooming-beyond-07749.herokuapp.com/inventorys/${carId}`;
-        fetch(url) 
+        fetch(`http://localhost:5000/inventory/${_id}`) 
         .then(res => res.json())
         .then(data => setCar(data))
-    }, [carId])
+    }, [])
 
     const deliverHandle = (car) => {
         const singleDeliver = [ ...carInfoshow, car]
@@ -24,6 +23,7 @@ const CarInfo = (singleInventoryHandle) => {
     return (
         <div className='carInfoMain container'>
             <div className='carInfoShow container'>
+                <h3>ID: {_id}</h3>
                 <img src={car.carImage} alt="" />
                 <h2>{car.name}</h2>
                 <h3>${car.price}</h3>

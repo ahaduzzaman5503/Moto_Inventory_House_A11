@@ -8,6 +8,7 @@ import Inventory from "./Components/Inventory/Inventory";
 import CarInfo from './Components/CarInfo/CarInfo';
 import LogIn from "./Components/LogIn/LogIn";
 import Register from "./Components/Register/Register";
+import About from './Components/About/About';
 
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-        <Route path='/inventory/:carId' element={<CarInfo></CarInfo>}></Route>
+        <Route path='/inventory/:_id' element={<CarInfo></CarInfo>}></Route>
         <Route path='/login' element={<LogIn></LogIn>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/regester' element={<Register></Register>} ></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

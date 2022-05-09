@@ -16,12 +16,12 @@ const Home = (props) => {
   const navigate = useNavigate();
 
   useEffect( () => {
-    fetch('https://blooming-beyond-07749.herokuapp.com/inventory')
+    fetch('http://localhost:5000/inventory')
     .then (res => res.json())
     .then(data => setCars(data));
   }, [])
 
-  fetch('https://blooming-beyond-07749.herokuapp.com/inventory', {
+  fetch('http://localhost:5000/inventory', {
     headers : { 
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -31,9 +31,9 @@ const Home = (props) => {
 .then(data => {
 })
 
-    const singleInventoryHandle = (car) => {
-     const singleCar = [...inventory, car]
-      navigate(`/inventory/${car.id}`);
+    const singleInventoryHandle = (id) => {
+     const singleCar = [...inventory, id]
+      navigate(`/inventory/${id}`);
       setInventory(singleCar)
   }
 
@@ -110,7 +110,7 @@ const Home = (props) => {
                 <div className='carShow container'>
                   {
                     cars.map( car => <CarShow
-                    key={car.id}
+                    key={car._id}
                     car={car}
                     singleInventoryHandle={singleInventoryHandle}
                     ></CarShow>)
