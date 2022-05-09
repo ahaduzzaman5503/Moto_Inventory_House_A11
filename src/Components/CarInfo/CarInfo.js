@@ -9,7 +9,7 @@ const CarInfo = (singleInventoryHandle) => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${_id}`) 
+        fetch(`https://glacial-beach-89236.herokuapp.com/inventory/${_id}`) 
         .then(res => res.json())
         .then(data => setCar(data))
     }, [])

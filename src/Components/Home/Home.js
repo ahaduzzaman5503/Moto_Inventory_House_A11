@@ -16,12 +16,12 @@ const Home = (props) => {
   const navigate = useNavigate();
 
   useEffect( () => {
-    fetch('http://localhost:5000/inventory')
+    fetch('https://glacial-beach-89236.herokuapp.com/inventory')
     .then (res => res.json())
     .then(data => setCars(data));
   }, [])
 
-  fetch('http://localhost:5000/inventory', {
+  fetch('https://glacial-beach-89236.herokuapp.com/inventory', {
     headers : { 
       'Content-Type': 'application/json',
       'Accept': 'application/json'
