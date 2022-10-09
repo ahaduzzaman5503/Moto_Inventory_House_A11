@@ -5,7 +5,6 @@ const CarShow = ({car, singleInventoryHandle}) => {
     const { _id, carImage, name, price, description, supplierName, quantity} = car;
     console.log(car)
 
-
     return (
         <div className='carshow'>
             <img src={carImage} alt="" />

@@ -2,12 +2,21 @@ import React from 'react';
 
 const About = () => {
     return (
+            
+
         <div className='container w-75'>
-             <h3>What are the differences between Node.JS and Javascript?</h3>
+                    <div tabIndex="0" className="collapse collapse-open border border-base-300 bg-blue-100 rounded-box container mx-auto mt-5"> 
+                        <div className="collapse-title text-xl font-medium">
+                        What are the differences between Node.JS and Javascript?
+                        </div>
+                        <div className="collapse-content"> 
+                        <p>The main difference between Node.JS and Javascript is Javascript can run in the browsers and be used on the client-side. On the other hand, NodeJS can run outside of the browser and be used on the server-side. Javascript is a high-level programming language used both on the client-side and server-side that allows you to make web pages interactive. NodeJS is a Javascript runtime environment, cross-platform, back-end JavaScript that runs on the Javascript V8 engine and executes JavaScript code outside a web browser.</p>
+                        </div>
+                    </div>
+
+         
  
-            <p>
-            The main difference between Node.JS and Javascript is Javascript can run in the browsers and be used on the client-side. On the other hand, NodeJS can run outside of the browser and be used on the server-side. Javascript is a high-level programming language used both on the client-side and server-side that allows you to make web pages interactive. NodeJS is a Javascript runtime environment, cross-platform, back-end JavaScript that runs on the Javascript V8 engine and executes JavaScript code outside a web browser.
-            </p>
+            
 
             <h3>When should we use NodeJS and when should we use MongoDB?</h3>
 

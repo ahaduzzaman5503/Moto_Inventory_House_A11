@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDbNRDeVTTIDUecC6svvi9HXTUeIu2SQ8g",
-  authDomain: "inventory-email-pass-auth.firebaseapp.com",
-  projectId: "inventory-email-pass-auth",
-  storageBucket: "inventory-email-pass-auth.appspot.com",
-  messagingSenderId: "55948039861",
-  appId: "1:55948039861:web:ba7248ad024703035990fc"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
-
-export default app;
+const auth = getAuth(app);
+export default auth;

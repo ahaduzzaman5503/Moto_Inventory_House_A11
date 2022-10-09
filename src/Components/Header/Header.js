@@ -2,8 +2,16 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css"
 import pic from "../../Images/logo-budget.png";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const[user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
         return () => {
@@ -30,7 +38,7 @@ const Header = () => {
              <Link className='link' to="/dealer">Dealer</Link>
              <Link className='link' to="/about">About</Link>
              <Link className='link' to="/contact">Contact</Link>
-             <Link className='link' to="/login">Log In</Link>
+             <li className='list-none'>{user ? <a className="btn btn-ghost normal-case text-xl" onClick={logout}>Sign Out</a> : <Link to="/login"  className='link'>log In</Link>}</li>
              <Link className='link' to="/regester">Register</Link>
             </div>
              </nav>
