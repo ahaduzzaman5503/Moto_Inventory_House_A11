@@ -3,7 +3,7 @@ import "./CarShow.css"
 
 const CarShow = ({car, singleInventoryHandle}) => {
     const { _id, carImage, name, price, description, supplierName, quantity} = car;
-    console.log(car)
+    // console.log(car)
 
     return (
         <div className='carshow'>
