@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "./CarInfo.css";
 
 const CarInfo = (singleInventoryHandle) => {
@@ -64,49 +64,36 @@ const CarInfo = (singleInventoryHandle) => {
                         <img className='fw-bold mb-2' src={car.carImage} alt="" />
                     </div>
                     <div className='p-2 bd-highlight'>
-                        <h2 className='fw-bold mb-1'>{car.name}</h2>
-                        <h3 className='fw-bold mb-1'>${car.price}</h3>
-                        <h3 className='fw-bold mb-1'>Suppliers:  {car.supplierName}</h3>
-                        <h3 className='fw-bold mb-1'>Quantity: {car.quantity}</h3>
+                        <h2 className='fw-bold mb-3'>Car Name:  {car.name}</h2>
+                        <h3 className='fw-bold mb-3'> Car Price:  ${car.price}</h3>
+                        <h3 className='fw-bold mb-3'>Suppliers:  {car.supplierName}</h3>
+                        <h3 className='fw-bold mb-0'>Quantity: {car.quantity}</h3>
                     </div>
                 </div>
                 <p>{car.description}</p> <br></br>
+
+                {/* add Stock Button */}
+
+                <div className="input-group mb-4 ">
+                    <input onBlur={(e) => setAddStock(e.target.value)}
+                     type="number" className="form-control" 
+                     ref={ref}
+                    placeholder="Add Product on Stock" 
+                    aria-label="Username" aria-describedby="basic-addon1"/>
+                    
+                    <button  onClick={handleStockQ}
+                     type="button" className="btn btn-success input-group-text" 
+                    id="basic-addon1"> <i className="fa-solid fa-circle-plus fa-xl">
+                        </i> Add Stock</button>
+                        <Link to={'/manageinventory'}>
+                     <button className="btn btn-active btn-secondary">Manage Inventories</button>
+                </Link>
+                </div>
+                            
                 <button className='stock-btn' onClick={ ()=> deliverHandle(car)} > <i className="fa-solid fa-truck"></i> Deliverd </button>
             </div>
 
 
-
-            <div className='carinfo'>
-            <div className='carItem'>
-                <div>
-                    <img src={car.carImage} alt="" />
-                </div>
-                <div>
-                    <h3 className='fw-bold mb-1'>{car.name}</h3>
-                    <h3 className='fw-bold mb-1'> Quantity: {car.quantity}</h3>
-                </div>
-                <div>
-                   <button type="button" className="btn btn-danger"><i className="fa-solid fa-trash-can fa-2xl"></i></button>
-                </div>
-            </div> 
-
-                <div className='container addNewBtn'>
-                    <button type="button" className="btn btn-primary w-50 "> <i className="fa-solid fa-circle-plus fa-xl"></i>  Add New Item </button>
-                </div>
-
-                <div className="input-group mb-5 container">
-                    <input onBlur={(e) => setAddStock(e.target.value)}
-                     type="number" className="form-control" 
-                     ref={ref}
-                    placeholder="Add Number of Product to Stock" 
-                    aria-label="Username" aria-describedby="basic-addon1"/>
-                    
-                    <button  onClick={handleStockQ} 
-                     type="button" className="btn btn-success input-group-text" 
-                    id="basic-addon1"> <i className="fa-solid fa-circle-plus fa-xl">
-                        </i> Add Stock</button>
-                </div>
-           </div>
         </div>
     );
 };

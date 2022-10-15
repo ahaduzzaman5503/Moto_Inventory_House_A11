@@ -19,6 +19,7 @@ const Home = (props) => {
     fetch('http://localhost:5000/inventory')
     .then (res => res.json())
     .then(data => setCars(data));
+    console.log(cars)
   }, [])
 
   fetch('http://localhost:5000/inventory', {
@@ -99,7 +100,6 @@ const Home = (props) => {
             <option>Audi</option>
           </select>
           </div>
-
           <button className='search-car px-4 bg-dark' >Search Car</button>
         </div>
         </div>
@@ -117,9 +117,7 @@ const Home = (props) => {
                   }
                 </div>
         </div>
-
-        <div className='automotive-marketplace container'>
-
+     <div className='automotive-marketplace container'>
 <div className='left-image'>
   <img src={car1} className="li" alt=""/>
 </div>
